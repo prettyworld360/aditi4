@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background: url(images/biki6.jpg);
+    background-size: cover; */
+    /* background: rgb(27, 27, 27); */
+    width: 100vw;
+}
+nav{
+    top: 0;
+    width:100vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+    background: repeating-linear-gradient(45deg, rgb(43, 43, 43) 30%, rgb(24, 24, 24), rgb(27, 27, 27), rgb(43, 43, 43) 5%);
+}
+nav div.logo{
+    font-size: 5vh;
+    padding: 10px;
+    color: cornsilk;
+}
+nav .nav-links{
+    margin: 0 2vw;
+    margin-left: 20vw;
+}
+nav .nav-links ul{
+    display: flex;
+}
+nav .nav-links ul li{
+    margin: 0 2vw;
+    text-decoration: none;
+    transition: 0.5s;
+    list-style: none;
+}
+nav .nav-links ul li a{
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 4px;
+    color: rgb(218, 218, 218);
+}
+nav .nav-links a:hover{
+    /* color: rgb(68, 68, 68); */
+    outline: 1px solid rgb(201, 201, 201);
+    /* background:linear-gradient(to right, rgb(9, 0, 136), rgb(121, 121, 255)); */
+}
+nav i#burger{
+    font-size: 1.3em;
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px;
+    position:absolute;
+    right:10px;
+    display: none;
+    color: rgb(226, 226, 226);
+}
+nav .nav-links i#nav-cross{
+    display: none;
+}
+#logoimg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: -10px 0;
+}
+/* ######################section1########################## */
+
+.imagebox{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate1 30s linear infinite;
+    margin-top: 150px;
+    /* background: url(images/biki3.jpg);
+    background-size: cover; */
+}
+@keyframes animate1{
+    0%{
+        transform: perspective(2000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(2000px) rotateY(360deg);
+    }
+}
+.imagebox span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg))translateZ(300px);
+}
+.imagebox span img{
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    /* width: 100%;
+    height: 100%; */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.imagebox span img:hover{
+    width: 300px;
+    height: 400px;
+    z-index: 2;
+}
+.imgbx2{
+    animation: animate2 40s linear infinite;
+}
+@keyframes animate2{
+    0%{
+        transform: perspective(2000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(2000px) rotateY(-360deg);
+    }
+}
+/* #########################fixed icons####################### */
+.fixicon{
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    color: darkkhaki;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    text-align: end;
+}
+#fixicn2{
+    display: none;
+}
+#hideicn{
+    display: none;
+}
+#hideicn a{
+    text-decoration: none;
+}
+#hideicn a span{
+    font-size: 10px;
+}
+@media screen and (max-width:768px){
+    .nav-links{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 30;
+        background:linear-gradient(45deg,rgb(46, 46, 46),rgb(56, 56, 56));
+        display: none;
+        right: 0;
+        top: 0;
+    }
+    .nav-links ul{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav-links ul li.nav-li{
+        margin: 3vh;
+    }
+    .nav-links ul li.nav-li a{
+        color: rgb(219, 219, 219);
+        padding: 5px;
+        outline: 1px solid rgb(221, 221, 221);
+    }
+    nav .nav-links i#nav-cross{
+        position: absolute;
+        display: block;
+        top: 25px;
+        right: 25px;
+        font-size: 1.7em;
+        outline: 1px solid rgb(218, 218, 218);
+        padding: 5px;
+        color: rgb(219, 219, 219);
+    }
+    .homeimg{
+        z-index: 2;
+    }
+    .homeimg img{
+        width: 200px;
+        height: 250px;
+        /* display: none; */
+    }
+    .topbtn{
+        display: block;
+    }
+    nav i#burger{
+        display: block;
+    }
+    
+}
